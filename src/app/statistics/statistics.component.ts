@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { StatisticsService } from '../services/statistics.service';
+import { ConsoleReporter } from 'jasmine';
 
 @Component({
   selector: 'app-statistics',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatisticsComponent implements OnInit {
 
-  constructor() { }
+  statistics: any = [];
+
+  constructor(private statisticsService: StatisticsService) { }
 
   ngOnInit() {
+    this.statisticsService.getStatistics()
+      .subscribe(resp => this.statistics = resp[1]);
   }
 
 }

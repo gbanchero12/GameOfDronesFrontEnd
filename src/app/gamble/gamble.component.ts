@@ -48,7 +48,6 @@ export class GambleComponent implements OnInit {
 
 
   playAgain(): void {
-
     location.reload();
   }
 }
