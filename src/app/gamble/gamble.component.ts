@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GambleModel } from '../models/gamble.model';
 import { NgForm } from '@angular/forms';
 import { GambleService } from '../services/gamble.service';
+import { Turn } from '../models/turn.model';
 
 @Component({
   selector: 'app-gamble',
@@ -16,8 +17,11 @@ export class GambleComponent implements OnInit {
 
 
   gamble = new GambleModel();
+  turn = new Turn();
   player = 'Player 1';
   param = '';
+  scorePlayer1: number;
+  scorePlayer2: number;
 
   ngOnInit() {
 
@@ -43,6 +47,8 @@ export class GambleComponent implements OnInit {
 
       this.param = '';
       this.player = 'Player 1';
+      this.scorePlayer1 = this.gamble.turn.scorePlayerOne;
+      this.scorePlayer2 = this.gamble.turn.scorePlayerTwo;
     }
   }
 

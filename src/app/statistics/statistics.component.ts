@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StatisticsService } from '../services/statistics.service';
-import { ConsoleReporter } from 'jasmine';
+import { StatisticsModel } from '../models/statistics.model';
+
 
 @Component({
   selector: 'app-statistics',
@@ -9,13 +10,13 @@ import { ConsoleReporter } from 'jasmine';
 })
 export class StatisticsComponent implements OnInit {
 
-  statistics: any = [];
+  statistics: StatisticsModel[] = [];
 
   constructor(private statisticsService: StatisticsService) { }
 
   ngOnInit() {
     this.statisticsService.getStatistics()
-      .subscribe(resp => this.statistics = resp[1]);
+      .subscribe(resp => this.statistics = resp);
   }
 
 }

@@ -3,6 +3,12 @@
 <div class="mb-3 mt-3" *ngIf='this.gamble.controlOfTurn'>
     Active player: <span [innerHTML]="player"></span>
 </div>
+<div class="mb-3 mt-3" *ngIf='!this.gamble.controlOfTurn'>
+    Score Player 1: <span [innerHTML]="scorePlayer1"></span>
+</div>
+<div class="mb-3 mt-3" *ngIf='!this.gamble.controlOfTurn'>
+Score Player 2: <span [innerHTML]="scorePlayer2"></span>
+</div>
 <form (ngSubmit)='send( f )' #f='ngForm'>
     <div class="row" *ngIf='this.gamble.controlOfTurn === true'>
         <div class="col">
