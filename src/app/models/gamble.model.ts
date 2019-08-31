@@ -1,7 +1,12 @@
 import { Turn } from './turn.model';
 
 export class GambleModel {
-    optionSelected: number;
+    movePlayerOne: number;
+    movePlayerTwo: number;
+    result: number;
+    controlOfTurn: boolean;
+    turn: Turn;
+    winner: string;
 }
 
 
