@@ -7,7 +7,7 @@ import { GambleModel } from '../models/gamble.model';
 })
 export class GambleService {
 
-  private url = 'localhost:3000';
+  private url = 'http://localhost:3000';
   constructor( private http: HttpClient ) {
    }
 

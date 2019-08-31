@@ -11,32 +11,44 @@ import { GambleService } from '../services/gamble.service';
 
 export class GambleComponent implements OnInit {
 
+  constructor(private gambleService: GambleService) {
+  }
+
+
   gamble = new GambleModel();
-
-  constructor( private gambleService: GambleService) { }
-
+  player = 'Player 1';
   param = '';
 
   ngOnInit() {
+
   }
 
-  send( form: NgForm ) {
+  send(form: NgForm) {
     console.log(form);
   }
 
-  onClick(event: { target: any; srcElement: any; currentTarget: any; }) {
+  sendResponse(event: { target: any; srcElement: any; currentTarget: any; }): void {
     const target = event.target || event.srcElement || event.currentTarget;
     const idAttr = target.attributes.id;
     const value = idAttr.nodeValue;
-    console.log(value);
+
     this.param += '/' + value;
-    console.log(this.param);
 
-    if (this.param.length === 4){
+
+    this.player = 'Player 2';
+
+    if (this.param.length === 4) {
       this.gambleService.getGambleByParams(this.param)
-      .subscribe ( resp => console.log(resp));
-      this.param = '';
-    }
+        .subscribe(resp => this.gamble = resp);
 
+      this.param = '';
+      this.player = 'Player 1';
+    }
+  }
+
+
+  playAgain(): void {
+
+    location.reload();
   }
 }
