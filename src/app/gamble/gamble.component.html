@@ -1,0 +1,27 @@
+<h1 class="mt-3">Select your weapon!</h1>
+<hr>
+<div class="mb-3 mt-3">
+<label>Active player:  </label>
+</div>
+<form (ngSubmit)='send( f )' #f='ngForm'>
+<div class="row">
+    <div class="col">
+        <button class="btn btn-primary" id="0"
+        (click)="onClick($event)"
+         name='0' type="">ROCK</button>
+    </div>
+    
+    <div class="col">
+        <button class="btn btn-primary" id="1" 
+        (click)="onClick($event)"
+        name='1' type="">PAPER</button>
+    </div>
+    
+    <div class="col">
+        <button class="btn btn-primary" id="2"
+        (click)="onClick($event)"
+         name='2' type="">SCISSORS</button>
+    </div>
+    
+</div>
+</form>
