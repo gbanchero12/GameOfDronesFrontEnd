@@ -3,6 +3,8 @@ import { GambleModel } from '../models/gamble.model';
 import { NgForm } from '@angular/forms';
 import { GambleService } from '../services/gamble.service';
 import { Turn } from '../models/turn.model';
+import {trigger, state, style, animate, transition } from '@angular/animations';
+import { $ } from 'protractor';
 
 @Component({
   selector: 'app-gamble',
