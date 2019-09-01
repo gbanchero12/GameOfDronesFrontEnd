@@ -12,15 +12,15 @@ Score Player 2: <span [innerHTML]="scorePlayer2"></span>
 <form (ngSubmit)='send( f )' #f='ngForm'>
     <div class="row" *ngIf='this.gamble.controlOfTurn === true'>
         <div class="col">
-            <button class="btn btn-primary" id="0" (click)="sendResponse($event)" name='0' type="">ROCK</button>
+            <img src="../../assets/rock.JPG" id="0" (click)="sendResponse($event)" name='0' type=""/>
         </div>
 
         <div class="col" *ngIf='this.gamble.controlOfTurn'>
-            <button class="btn btn-primary" id="1" (click)="sendResponse($event)" name='1' type="">PAPER</button>
+            <img src="../../assets/paper.JPG" id="1" (click)="sendResponse($event)" name='1' type=""/>
         </div>
 
         <div class="col" *ngIf='this.gamble.controlOfTurn'>
-            <button class="btn btn-primary" id="2" (click)="sendResponse($event)" name='2' type="">SCISSORS</button>
+            <img src="../../assets/scissors.JPG" id="2" (click)="sendResponse($event)" name='2' type=""/>
         </div>
 
     </div>
