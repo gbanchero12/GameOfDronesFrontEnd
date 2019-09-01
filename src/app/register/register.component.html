@@ -1,0 +1,35 @@
+
+<h1 class="mt-3">Rock-Paper-Scissors-Game!</h1>
+
+<form (ngSubmit)="save( f )" #f="ngForm">
+    
+        <div class="input-group mt-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Player 1 name: </span>
+                </div>
+                <input type="text"
+                aria-label="First name" name="namePlayerOne" required>
+                
+              </div>
+              
+        <div class="input-group mt-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Player 2 name:</span>
+                </div>
+                <input
+                type="text" aria-label="First name" name="namePlayerTwo" required>
+                
+              </div>
+            <div class="mt-3 mb-3">
+            <button class="btn btn-primary" type="submit"> Register </button>
+          </div>
+          <div class="mb-3">
+              
+            <button class="btn btn-primary" type="button" routerLink="/gamble" routerLinkActive="Active"> Play! </button>
+                </div>
+                
+            <img class="animated fadeIn slower" id="image" src="../../assets/rock-paper-scissors-game.jpg">
+    
+    
+
+</form>
